@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola</title>
+    <style>
+        body {
+            background: rgb(70, 142, 236);
+            font: normal 15pt Arial;
+        }
+        
+        header {
+            color: white;
+            text-align: center;
+        }
+        
+        section {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.342);
+            text-align: center;
+        }
+        
+        footer {
+            color: white;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Aproveitamento do Aluno</h1>
+    </header>
+    <section>
+        <div>
+            <p>Primeira Nota:
+                <input type="number" name="nota1" id="nota1">
+            </p>
+            <p>Segunda Nota:
+                <input type="number" name="nota2" id="nota2">
+            </p>
+            <input type="button" value="Verificar" onclick="calcular()">
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <footer>
+        <p>&copy; LucasAndrade</p>
+    </footer>
+    <script>
+        function calcular() {
+            var n1 = parseFloat(document.getElementById('nota1').value)
+            var n2 = parseFloat(document.getElementById('nota2').value)
+            var media = (n1 + n2) / 2
+            var res = document.getElementById('res')
+            res.innerHTML = `<p>Sua Media e: ${media}</p>`
+            if (media >= 9.00 && media <= 10.00) {
+                res.innerHTML += 'APROVEITAMENTO: A.'
+            } else if (media >= 8.00 && media <= 8.90) {
+                res.innerHTML += 'APROVEITAMENTO: B.'
+            } else if (media >= 7.00 && media <= 7.90) {
+                res.innerHTML += 'APROVEITAMENTO: C.'
+            } else if (media >= 6.00 && media <= 6.90) {
+                res.innerHTML += 'APROVEITAMENTO: D.'
+            } else if (media >= 5.00 && media <= 5.90) {
+                res.innerHTML += 'APROVEITAMENTO: F.'
+            } else {
+                res.innerHTML += 'APROVEITAMENTO: F.'
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departamento de Transito</title>
+    <style>
+        body {
+            background: rgb(70, 142, 236);
+            font: normal 15pt Arial;
+        }
+        
+        header {
+            color: white;
+            text-align: center;
+        }
+        
+        section {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.342);
+        }
+        
+        footer {
+            color: white;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Habilitacao</h1>
+    </header>
+    <section>
+        <div>
+            <p>Ano de Nascimento:
+                <input type="number" name="anonasc" id="anonasc" min="0">
+                <input type="button" value="Verificar" onclick="calcular()">
+            </p>
+        </div>
+
+        <div id="res">
+
+        </div>
+    </section>
+    <footer>
+        <p>&copy;LucasAndrade</p>
+    </footer>
+
+    <script>
+        function calcular() {
+            var anoat = new Date()
+            var ano = anoat.getFullYear()
+            var nasc = document.getElementById('anonasc').value
+            var res = document.getElementById('res')
+            var ideal = 18
+            var idade = ano - nasc
+            res.innerHTML = `Sua IDADE e: ${idade}`
+            if (idade <= ideal) {
+                //MENOR DE IDADE
+                res.innerHTML += '<p>INAPTO A TIRAR A CARTEIRA DE HABILITACAO.</p>'
+            } else {
+                //MAIOR DE IDADE
+                res.innerHTML += '<p>Parabens! Voce esta apto a tirar a carteira de habilitacao.</p>'
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Escola</title>
+    <style>
+        body {
+            font: normal;
+            background-color: rgb(211, 211, 211);
+        }
+        
+        h1 {
+            font: normal 20pt Arial;
+            text-align: center;
+            width: auto;
+        }
+        
+        h2 {
+            font: normal 20pt Arial;
+            width: auto;
+            text-align: center;
+        }
+        
+        .barra {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Auto Escola</h1>
+    <form>
+        <fieldset id="barra">
+            <h2>Notas</h2>
+            <p>Primeira Nota: <input type="number" id="txtn"></br>
+            </p>
+            <p>Segunda Nota: <input type="number" id="txtn2"></br>
+            </p>
+            <input type="button" value="Confirmar" onclick="Calcular()">
+            <div id="campo">
+
+            </div>
+        </fieldset>
+    </form>
+    <script>
+        function Calcular() {
+            var n1 = parseFloat(document.getElementById('txtn').value)
+            var n2 = parseFloat(document.getElementById('txtn2').value)
+            var campo = document.getElementById('campo')
+            var media = (n1 + n2) / 2
+            campo.innerHTML = `MEDIA: ${media}`
+            if (media >= 7) {
+                campo.innerHTML += `<p> Aprovado!</p>`
+            } else {
+                campo.innerHTML += `<p> Reprovado!</p>`
+            }
+        }
+    </script>
+</body>
+
+</html>

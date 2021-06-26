@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crianca Esperanca</title>
+    <style>
+        body {
+            background: rgb(70, 142, 236);
+            font: normal 15pt Arial;
+        }
+        
+        header {
+            color: white;
+            text-align: center;
+        }
+        
+        h2 {
+            font: normal 15pt Arial;
+        }
+        
+        section {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.342);
+            text-align: center;
+        }
+        
+        footer {
+            color: white;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Crianca Esperanca</h1>
+        <h2>Muito Obrigado por ajudar!</h2>
+    </header>
+    <section>
+        <div>
+            <p><input type="radio" name="radn1" id="numero1" checked>
+                <label for="numero1">para doar R$10</label></p>
+            <p><input type="radio" name="radn1" id="numero2">
+                <label for="numero2">para doar R$25</label></p>
+            <p><input type="radio" name="radn1" id="numero3">
+                <label for="numero3">para doar R$50</label></p>
+            <p><input type="radio" name="radn1" id="numero4">
+                <label for="numero4">para doar outro valor</label></p>
+            <p><input type="radio" name="radn1" id="numero5">
+                <label for="numero5">Cancelar</label></p>
+            <input type="button" value="Concluir" onclick="pronto">
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <footer>
+        <p>&copy; LucasAndrade</p>
+    </footer>
+    <script>
+    </script>
+</body>
+
+</html>
