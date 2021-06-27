@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Cadastro</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="js/function.js"></script>
+    <script type="text/javascript" src="js/jquery.cpf-validate.1.0.min.js"></script>
+
+</head>
+
+<body style="background: url(corfundo.webp);">
+    <div>
+        <a href="http://www.clavincorp.com.br/"><img src="logo-front.png" class="rounded float-left p-1"></a>
+    </div><br><br>
+    <div>
+        <h1 id="titulo" class="text-md-center p-2" style="color: #28617c;"><strong>Cadastro</strong></h1>
+    </div>
+
+    <div class="container">
+        <div class="row p-3 justify-content-center" style="color: #28617c;">
+            <div class="col-6 ">
+                <div class="card">
+                    <div class="card-body m-auto">
+                        <form name="form" id="form" method="POST">
+                            <div class="form-group ">
+                                <h5 id="subtitulo" class="text-center"><strong>Preencha suas informações</strong></h5><br>
+
+                                <!---NOME--->
+                                <label for="nome"><strong>Nome:</strong></label>
+                                <input class="form-control form-control-sm w-100" id="nome" name="nome" placeholder="Nome Completo">
+                                <div id="erro-nome"></div>
+                            </div>
+
+                            <!---CPF--->
+                            <div class="form-group">
+                                <label for="cpf"><strong>CPF: </strong></label>
+                                <input class="form-control form-control-sm w-50" type="text" name="cpf" id="cpf" autocomplete="off" placeholder="XXX.XXX.XXX-XX" onkeyup="mascaraCpf('XXX.XXX.XXX-XX', this)">
+                                <div id="erro-cpf"></div>
+                            </div>
+
+                            <!---EMAIL--->
+                            <div class="form-group">
+                                <label for="email"><strong>Endereço de email:</strong></label>
+                                <input type="email" class="form-control form-control-sm w-75" name="email" id="email" placeholder="nome@exemplo.com">
+                                <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+                                <div id="erro-email"></div>
+                            </div>
+
+                            <!---DATA DE NASCIMENTO--->
+                            <div class="form-group">
+                                <label for="nascimento"><strong>Data de nascimento: </strong></label><br>
+                                <input type="date" name="data de nascimento" name="data" id="data" min="1980-12-31" max="2021-12-31" required>
+                                <div id="erro-nasc"></div>
+                            </div>
+
+                            <!---GENERO--->
+                            <div class="form-group">
+                                <label><strong>Selecione o Gênero:</strong></label><br>
+                                <input type="radio" name="genero" id="masculino" value="Masculino" checked>
+                                <label for="masculino">Masculino</label>
+                                <input type="radio" name="genero" id="feminino" value="Feminino">
+                                <label for="feminino">Feminino</label>
+                            </div>
+
+                            <!---SENHA--->
+                            <div class="form-group">
+                                <label for="senha"><strong>Senha:</strong></label>
+                                <input type="password" class="form-control form-control-sm w-75" name="senha" id="senha" placeholder="Senha">
+                                <small id="ajudasenha" class="form-text text-muted">Deve ter entre 8 e 20 caracteres.</small>
+                                <div id="erro-senha"></div>
+                            </div>
+
+                            <!---CONFIRMACAO DE SENHA--->
+                            <div class="form-group">
+                                <label for="csenha"><strong>Confirme sua Senha:</strong></label>
+                                <input type="password" class="form-control form-control-sm w-75" name="csenha" id="csenha" placeholder="Confirme a Senha">
+                                <div id="erro-csenha"></div>
+                            </div>
+
+                            <!---BOTAO CADASTRAR--->
+                            <button type="button" class="btn btn-primary" name="botao" id="botao" onclick="cadastro()">Cadastrar</button>
+
+                            <!---BOTAO CANCELAR--->
+                            <button type="button" class="btn btn-primary" id="bcancelar" name="bcancelar" onclick="cancelar()">Cancelar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p class="text-center p-5">&copy;LucasAndrade</p>
+    </footer>
+</body>
+
+</html>
